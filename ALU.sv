@@ -15,7 +15,7 @@ always_comb begin
     3'b010: {cout, result} = {1'b0, !(a | b)};
     3'b011: {cout, result} = {1'b0, (a & b)};
     3'b100: {cout, result} = {1'b0, (a ^ b)};
-    3'b101: {cout, result} = {cin, (a >> 1)};
+    3'b101: {cout, result} = {1'b0, (a >> 1)};
     default: {cout, result} = 0;
     endcase
 end
@@ -23,4 +23,3 @@ end
 assign zero = ~(| result);
 
 endmodule : ALU
-
